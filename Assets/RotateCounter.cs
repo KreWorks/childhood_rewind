@@ -29,6 +29,8 @@ public class RotateCounter : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		startPosition = this.transform.position;
+		startRotation = this.transform.rotation;
 		//Debug.Log(SystemInfo.deviceUniqueIdentifier);
 		ResetStartCondition();
 	}
@@ -70,8 +72,8 @@ public class RotateCounter : MonoBehaviour
 
 	public void ResetStartCondition()
 	{
-		startPosition = this.transform.position;
-		startRotation = this.transform.rotation;
+		this.transform.position = startPosition;
+		this.transform.rotation = startRotation;
 
 		startRotationCount = (int)Random.Range(0.2f * roundNeeded, 0.8f*roundNeeded);
 		rotationCounter = startRotationCount;
@@ -81,6 +83,8 @@ public class RotateCounter : MonoBehaviour
 		fullRotationDegree = 0.0f;
 		rotationTime = 0.0f;
 		lastAngle = this.transform.rotation.eulerAngles.y;
+
+		Time.timeScale = 1;
 	}
 
 

@@ -7,11 +7,17 @@ public class GameManager : MonoBehaviour
 {
 	public TMP_Text startGameButtonText;
 
+	public RotateCounter casette;
+	public HandController pen;
+
+	List<int> records;
+
     // Start is called before the first frame update
     void Start()
     {
 		Time.timeScale = 0;
 		startGameButtonText.text = "Start Game";
+
 	}
 
 	void Update()
@@ -56,5 +62,8 @@ public class GameManager : MonoBehaviour
 
 		MenuPanelManager menuPanelManager = MenuPanelManager.GetInstance();
 		menuPanelManager.CloseMenu();
+
+		casette.ResetStartCondition();
+		pen.ResetStartCondition();
 	}
 }

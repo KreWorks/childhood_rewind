@@ -4,7 +4,7 @@ public enum MenuPanelType
 {
 	//GameUI,
 	MainMenu, 
-	//OptionsMenu, 
+	OptionsMenu, 
 	TutorialMenu, 
 	//HighscoreMenu,
 	EndGameWinMenu,
