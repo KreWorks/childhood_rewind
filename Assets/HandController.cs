@@ -8,18 +8,13 @@ public class HandController : MonoBehaviour
 	public float mouseSensitivity;
 	public float speed;
 
-	public float penUpYposition;
-	public float penDownYPosition;
-
 	Rigidbody rb;
-	Vector3 startPosition;
 
 	Vector3 movement;
 
     // Start is called before the first frame update
     void Start()
     {
-		startPosition = this.transform.position;
 		rb = GetComponent<Rigidbody>();
     }
 
@@ -44,7 +39,5 @@ public class HandController : MonoBehaviour
 		{
 			rb.MovePosition(this.transform.position + movement * speed * Time.deltaTime);
 		}
-
-
 	}
 }
